@@ -1,0 +1,3 @@
+#define Ysh_VERSION_MAJOR @Ysh_VERSION_MAJOR@
+#define Ysh_VERSION_MINOR @Ysh_VERSION_MINOR@
+#cmakedefine DEBUG

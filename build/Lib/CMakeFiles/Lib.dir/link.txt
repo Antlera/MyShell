@@ -1,0 +1,2 @@
+/bin/ar qc ../lib/libLib.a  CMakeFiles/Lib.dir/type_prompt.c.o
+/bin/ranlib ../lib/libLib.a

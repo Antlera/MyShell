@@ -1,0 +1,1 @@
+/bin/gcc -g   CMakeFiles/Ysh.dir/ysh.c.o  -o bin/Ysh   -L/usr/include  -Wl,-rpath,/usr/include lib/libMyShell.a -lreadline 

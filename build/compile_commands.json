@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/antlers/2019141480012/ysh/build",
+  "command": "/bin/gcc  -I/home/antlers/2019141480012/ysh/build -I/home/antlers/2019141480012/ysh/MyShell  -g   -o CMakeFiles/Ysh.dir/ysh.c.o   -c /home/antlers/2019141480012/ysh/ysh.c",
+  "file": "/home/antlers/2019141480012/ysh/ysh.c"
+},
+{
+  "directory": "/home/antlers/2019141480012/ysh/build/MyShell",
+  "command": "/bin/gcc   -g   -o CMakeFiles/MyShell.dir/type_prompt.c.o   -c /home/antlers/2019141480012/ysh/MyShell/type_prompt.c",
+  "file": "/home/antlers/2019141480012/ysh/MyShell/type_prompt.c"
+},
+{
+  "directory": "/home/antlers/2019141480012/ysh/build/MyShell",
+  "command": "/bin/gcc   -g   -o CMakeFiles/MyShell.dir/read_command.c.o   -c /home/antlers/2019141480012/ysh/MyShell/read_command.c",
+  "file": "/home/antlers/2019141480012/ysh/MyShell/read_command.c"
+}
+]

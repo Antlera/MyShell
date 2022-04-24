@@ -1,0 +1,2 @@
+/bin/ar qc ../lib/libMyShell.a  CMakeFiles/MyShell.dir/type_prompt.c.o CMakeFiles/MyShell.dir/read_command.c.o
+/bin/ranlib ../lib/libMyShell.a

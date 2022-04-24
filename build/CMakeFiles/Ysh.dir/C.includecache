@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../MyShell/MyShell.h
+
+/home/antlers/2019141480012/ysh/ysh.c
+stdlib.h
+-
+stdio.h
+-
+sys/types.h
+-
+sys/wait.h
+-
+unistd.h
+-
+MyShell.h
+/home/antlers/2019141480012/ysh/MyShell.h
+

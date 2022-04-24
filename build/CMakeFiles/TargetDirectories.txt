@@ -1,0 +1,6 @@
+/home/antlers/2019141480012/ysh/build/CMakeFiles/rebuild_cache.dir
+/home/antlers/2019141480012/ysh/build/CMakeFiles/edit_cache.dir
+/home/antlers/2019141480012/ysh/build/CMakeFiles/Ysh.dir
+/home/antlers/2019141480012/ysh/build/MyShell/CMakeFiles/edit_cache.dir
+/home/antlers/2019141480012/ysh/build/MyShell/CMakeFiles/rebuild_cache.dir
+/home/antlers/2019141480012/ysh/build/MyShell/CMakeFiles/MyShell.dir
