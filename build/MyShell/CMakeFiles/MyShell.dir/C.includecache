@@ -6,8 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/antlers/2019141480012/ysh/MyShell/MyShell.h
-
 /home/antlers/2019141480012/ysh/MyShell/read_command.c
 stdio.h
 -
@@ -15,6 +13,8 @@ readline/readline.h
 -
 readline/history.h
 -
-MyShell.h
-/home/antlers/2019141480012/ysh/MyShell/MyShell.h
+read_command.h
+/home/antlers/2019141480012/ysh/MyShell/read_command.h
+
+/home/antlers/2019141480012/ysh/MyShell/read_command.h
 

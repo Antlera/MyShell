@@ -7,10 +7,9 @@
 #include<stdio.h>
 #include <readline/readline.h>
 #include <readline/history.h>
-#include "MyShell.h"
-
-int read_command(char **command,char **parameters,char *prompt){
-    free(buffer);
+#include "read_command.h"
+int read_command(char **command,char **parameters,char *prompt,char *buffer){
+    // free(buffer);
     buffer = readline(prompt);
     if(feof(stdin))
     {

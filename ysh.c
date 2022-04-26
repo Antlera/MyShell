@@ -9,8 +9,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include "MyShell.h"
-
+#include "read_command.h"
+#include "type_prompt.h"
 void ysh_loop(void);
 int main(int argc,char **argv){
     // Load config files, if any
@@ -24,12 +24,15 @@ void ysh_loop(void){
     char *line;
     char *command = NULL;
     char **parameters;
+    char* buffer;
+    char* prompt;
     int loopStatus = 1;
     int status = 1;
-    int paraNum;
+    int paraNum;  
     pid_t chdPid;
     parameters = malloc(sizeof(char *) * (MAXARG + 2));
-    buffer = malloc(sizeof(char) * MAXLINE);
+    buffer = malloc(sizeof(char*)*MAX_BUFFER_LEN);
+    prompt = malloc(sizeof(char*)*MAX_PROMPT_LEN);
     if (parameters == NULL || buffer == NULL)
     {
         printf("Ysh error:malloc failed.\n");
@@ -37,8 +40,8 @@ void ysh_loop(void){
     }
     do
     {
-        type_prompt("> ");
-        paraNum = read_command(&command,parameters,"> ");
+        type_prompt(prompt);
+        paraNum = read_command(&command,parameters,prompt,buffer);
         if (paraNum == -1)
         {
             continue;//用户未输入参数
