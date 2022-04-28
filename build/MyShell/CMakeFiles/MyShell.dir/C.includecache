@@ -6,15 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/antlers/2019141480012/ysh/MyShell/read_command.c
+/home/antlers/2019141480012/ysh/MyShell/builtin_command.c
+stdlib.h
+-
 stdio.h
 -
-readline/readline.h
+errno.h
 -
-readline/history.h
+string.h
 -
-read_command.h
-/home/antlers/2019141480012/ysh/MyShell/read_command.h
+unistd.h
+-
+pwd.h
+-
+builtin_command.h
+/home/antlers/2019141480012/ysh/MyShell/builtin_command.h
 
-/home/antlers/2019141480012/ysh/MyShell/read_command.h
+/home/antlers/2019141480012/ysh/MyShell/builtin_command.h
 

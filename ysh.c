@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include "read_command.h"
 #include "type_prompt.h"
+#include "builtin_command.h"
 void ysh_loop(void);
 int main(int argc,char **argv){
     // Load config files, if any
@@ -47,6 +48,9 @@ void ysh_loop(void){
             continue;//用户未输入参数
         }
         paraNum--;
+        if(builtin_command(command,parameters))
+            continue;
+
         if ((chdPid = fork())!=0)
         {
             //parent code

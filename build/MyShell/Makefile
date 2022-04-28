@@ -125,6 +125,33 @@ MyShell/fast:
 	cd /home/antlers/2019141480012/ysh/build && $(MAKE) -f MyShell/CMakeFiles/MyShell.dir/build.make MyShell/CMakeFiles/MyShell.dir/build
 .PHONY : MyShell/fast
 
+builtin_command.o: builtin_command.c.o
+
+.PHONY : builtin_command.o
+
+# target to build an object file
+builtin_command.c.o:
+	cd /home/antlers/2019141480012/ysh/build && $(MAKE) -f MyShell/CMakeFiles/MyShell.dir/build.make MyShell/CMakeFiles/MyShell.dir/builtin_command.c.o
+.PHONY : builtin_command.c.o
+
+builtin_command.i: builtin_command.c.i
+
+.PHONY : builtin_command.i
+
+# target to preprocess a source file
+builtin_command.c.i:
+	cd /home/antlers/2019141480012/ysh/build && $(MAKE) -f MyShell/CMakeFiles/MyShell.dir/build.make MyShell/CMakeFiles/MyShell.dir/builtin_command.c.i
+.PHONY : builtin_command.c.i
+
+builtin_command.s: builtin_command.c.s
+
+.PHONY : builtin_command.s
+
+# target to generate assembly for a file
+builtin_command.c.s:
+	cd /home/antlers/2019141480012/ysh/build && $(MAKE) -f MyShell/CMakeFiles/MyShell.dir/build.make MyShell/CMakeFiles/MyShell.dir/builtin_command.c.s
+.PHONY : builtin_command.c.s
+
 read_command.o: read_command.c.o
 
 .PHONY : read_command.o
@@ -188,6 +215,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MyShell"
+	@echo "... builtin_command.o"
+	@echo "... builtin_command.i"
+	@echo "... builtin_command.s"
 	@echo "... read_command.o"
 	@echo "... read_command.i"
 	@echo "... read_command.s"

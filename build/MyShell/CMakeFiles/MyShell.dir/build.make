@@ -83,19 +83,34 @@ MyShell/CMakeFiles/MyShell.dir/read_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MyShell.dir/read_command.c.s"
 	cd /home/antlers/2019141480012/ysh/build/MyShell && /bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/antlers/2019141480012/ysh/MyShell/read_command.c -o CMakeFiles/MyShell.dir/read_command.c.s
 
+MyShell/CMakeFiles/MyShell.dir/builtin_command.c.o: MyShell/CMakeFiles/MyShell.dir/flags.make
+MyShell/CMakeFiles/MyShell.dir/builtin_command.c.o: ../MyShell/builtin_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/antlers/2019141480012/ysh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object MyShell/CMakeFiles/MyShell.dir/builtin_command.c.o"
+	cd /home/antlers/2019141480012/ysh/build/MyShell && /bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/MyShell.dir/builtin_command.c.o   -c /home/antlers/2019141480012/ysh/MyShell/builtin_command.c
+
+MyShell/CMakeFiles/MyShell.dir/builtin_command.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/MyShell.dir/builtin_command.c.i"
+	cd /home/antlers/2019141480012/ysh/build/MyShell && /bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/antlers/2019141480012/ysh/MyShell/builtin_command.c > CMakeFiles/MyShell.dir/builtin_command.c.i
+
+MyShell/CMakeFiles/MyShell.dir/builtin_command.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/MyShell.dir/builtin_command.c.s"
+	cd /home/antlers/2019141480012/ysh/build/MyShell && /bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/antlers/2019141480012/ysh/MyShell/builtin_command.c -o CMakeFiles/MyShell.dir/builtin_command.c.s
+
 # Object files for target MyShell
 MyShell_OBJECTS = \
 "CMakeFiles/MyShell.dir/type_prompt.c.o" \
-"CMakeFiles/MyShell.dir/read_command.c.o"
+"CMakeFiles/MyShell.dir/read_command.c.o" \
+"CMakeFiles/MyShell.dir/builtin_command.c.o"
 
 # External object files for target MyShell
 MyShell_EXTERNAL_OBJECTS =
 
 lib/libMyShell.a: MyShell/CMakeFiles/MyShell.dir/type_prompt.c.o
 lib/libMyShell.a: MyShell/CMakeFiles/MyShell.dir/read_command.c.o
+lib/libMyShell.a: MyShell/CMakeFiles/MyShell.dir/builtin_command.c.o
 lib/libMyShell.a: MyShell/CMakeFiles/MyShell.dir/build.make
 lib/libMyShell.a: MyShell/CMakeFiles/MyShell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/antlers/2019141480012/ysh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library ../lib/libMyShell.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/antlers/2019141480012/ysh/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library ../lib/libMyShell.a"
 	cd /home/antlers/2019141480012/ysh/build/MyShell && $(CMAKE_COMMAND) -P CMakeFiles/MyShell.dir/cmake_clean_target.cmake
 	cd /home/antlers/2019141480012/ysh/build/MyShell && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyShell.dir/link.txt --verbose=$(VERBOSE)
 
