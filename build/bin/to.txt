@@ -1,3 +1,6 @@
-Ysh cat echo from.txt to.txt
-Ysh cat echo from.txt to.txt
-Ysh from.txt to.txt
+Ysh
+from.txt
+to.txt
+Ysh
+from.txt
+to.txt

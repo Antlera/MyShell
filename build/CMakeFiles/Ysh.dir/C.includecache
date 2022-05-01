@@ -21,6 +21,10 @@ stdio.h
 -
 sys/types.h
 -
+sys/stat.h
+-
+fcntl.h
+-
 sys/wait.h
 -
 unistd.h
