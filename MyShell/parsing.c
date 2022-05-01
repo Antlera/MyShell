@@ -28,6 +28,7 @@ int parsing(char **parameters, int paraNum,struct ParseInfo *info)
     }
     for(int i = 0;i<paraNum;)
     {
+        //检测到对应符号，即将对应标志flag置位，并用空指针清除该参数
         if(strcmp(parameters[i],"<<")==0 || strcmp(parameters[i],"<")==0)    
         {
             info->flag |= IN_REDIRECT;

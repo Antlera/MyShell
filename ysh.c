@@ -28,17 +28,16 @@ int main(int argc,char **argv){
     return EXIT_SUCCESS;
 }
 void ysh_loop(void){
-    char *line;
-    char *command = NULL;
+    char *command = NULL;//输入命令指针
     char **parameters;
-    char* buffer;
+    char* buffer;//命令输入缓存
     char* prompt;
     int loopStatus = 1;
     int status = 1;
-    int paraNum;  
-    struct ParseInfo info;
-    int pipefd[2];
-    int infd,outfd;
+    int paraNum;  //参数块个数
+    struct ParseInfo info;//语义分析相关结构体，内部包含重定向之后指向的命令
+    int pipefd[2];//用于创建管道的文件标识符组
+    int infd,outfd;//替换标准输入输出的文件标识符
     pid_t chdPid,chdPid2;
     parameters = malloc(sizeof(char *) * (MAXARG + 2));
     buffer = malloc(sizeof(char*)*MAX_BUFFER_LEN);
@@ -59,18 +58,18 @@ void ysh_loop(void){
         }
         paraNum--;
         
-        for(int i =0;i<paraNum;i++)
-        {
-            printf("%s\n",parameters[i]);
-        }
-        printf("flag: %d\n",info.flag);
+        /* for(int i =0;i<paraNum;i++) */
+        /* { */
+        /*     printf("%s\n",parameters[i]); */
+        /* } */
+        /* printf("flag: %d\n",info.flag); */
         parsing(parameters,paraNum,&info);
-        for(int i =0;i<paraNum;i++)
-        {
-            if(parameters[i]!=NULL)
-                printf("%s\n",parameters[i]);
-        }
-        printf("flag: %d\n",info.flag);
+        /* for(int i =0;i<paraNum;i++) */
+        /* { */
+        /*     if(parameters[i]!=NULL) */
+        /*         printf("%s\n",parameters[i]); */
+        /* } */
+        /* printf("flag: %d\n",info.flag); */
         if(builtin_command(command,parameters))
             continue;
         if(info.flag & IS_PIPED)
@@ -83,20 +82,20 @@ void ysh_loop(void){
         }
         if ((chdPid = fork())!=0)
         {
-            if(info.flag & IS_PIPED)
+            if(info.flag & IS_PIPED)//IS_PIPED 有命令2
             {
                if((chdPid2=fork())!=0) 
                {
                    //parent code
                    close(pipefd[0]);
                    close(pipefd[1]);
-                   waitpid(chdPid2,&status,0);
+                   waitpid(chdPid2,&status,0);//等待命令2进程结束
                }
                else
                {
                    printf("command2:%s\n",info.command2);
-                   close(pipefd[1]);
-                   close(fileno(stdin));
+                   close(pipefd[1]);//关闭写端
+                   close(fileno(stdin));//关闭并将标准输入重用为管道读端
                    dup2(pipefd[0],fileno(stdin));
                    close(pipefd[0]);
                    execvp(info.command2,info.parameters2);
@@ -109,13 +108,13 @@ void ysh_loop(void){
             else
             {
                 //parent code
-                waitpid(chdPid, &status, 0);
+                waitpid(chdPid, &status, 0);//等待命令1进程结束
             }
         }
         else{
             if(info.flag & IS_PIPED)
             {
-                if(!(info.flag & OUT_REDIRECT)&&!(info.flag & OUT_REDIRECT_APPEND))
+                if(!(info.flag & OUT_REDIRECT)&&!(info.flag & OUT_REDIRECT_APPEND))//ONLY IS_PIPED 
                 {
                     printf("only piped\n");
                     close(pipefd[0]);//关闭读端
@@ -128,12 +127,12 @@ void ysh_loop(void){
                 {
                     close(pipefd[0]);
                     close(pipefd[1]);//send a EOF to command2
-                    if(info.flag & OUT_REDIRECT)
+                    if(info.flag & OUT_REDIRECT)//OUT_REDIRECT WITH PIPE
                     {
                         printf("piped and OUT_REDIRECT\n");
                         outfd = open(info.outFile, O_WRONLY|O_CREAT|O_TRUNC,0666);
                     }
-                    else
+                    else//OUT_REDIRECT_APPEND WITH PIPE
                     {
                         printf("piped and OUT_REDIRECT_APPEND\n");
                         outfd = open(info.outFile, O_WRONLY|O_APPEND,0666);
@@ -145,7 +144,7 @@ void ysh_loop(void){
             }
             else
             {
-                if(info.flag & OUT_REDIRECT) 
+                if(info.flag & OUT_REDIRECT) //OUT_REDIRECT WITHOUT PIPE
                 {
                     printf("not piped and OUT_REDIRECT\n");
                     outfd = open(info.outFile, O_WRONLY|O_CREAT|O_TRUNC,0666);
@@ -153,7 +152,7 @@ void ysh_loop(void){
                     dup2(outfd,fileno(stdout));
                     close(outfd);
                 }
-                else if(info.flag & OUT_REDIRECT_APPEND)
+                else if(info.flag & OUT_REDIRECT_APPEND)//OUT_REDIRECT_APPEND WITHOUT PIPE
                 {
                     printf("not piped and OUT_REDIRECT_APPEND\n");
                     outfd = open(info.outFile, O_WRONLY|O_APPEND,0666);
@@ -162,7 +161,7 @@ void ysh_loop(void){
                     close(outfd);
                 }
             }
-            if(info.flag & IN_REDIRECT)
+            if(info.flag & IN_REDIRECT)//IN_REDIRECT
             {
                 printf("IN_REDIRECT\n");
                 infd = open(info.inFile, O_CREAT|O_RDONLY,0666);
