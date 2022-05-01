@@ -8,6 +8,8 @@
 
 ../MyShell/builtin_command.h
 
+../MyShell/parsing.h
+
 ../MyShell/read_command.h
 
 ../MyShell/type_prompt.h
@@ -23,10 +25,14 @@ sys/wait.h
 -
 unistd.h
 -
+readline/history.h
+-
 read_command.h
 /home/antlers/2019141480012/ysh/read_command.h
 type_prompt.h
 /home/antlers/2019141480012/ysh/type_prompt.h
+parsing.h
+/home/antlers/2019141480012/ysh/parsing.h
 builtin_command.h
 /home/antlers/2019141480012/ysh/builtin_command.h
 

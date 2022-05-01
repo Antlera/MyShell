@@ -6,21 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/antlers/2019141480012/ysh/MyShell/builtin_command.c
-stdlib.h
--
-stdio.h
--
-errno.h
--
+/home/antlers/2019141480012/ysh/MyShell/parsing.c
 string.h
 -
-unistd.h
+stdlib.h
 -
-pwd.h
--
-builtin_command.h
-/home/antlers/2019141480012/ysh/MyShell/builtin_command.h
+parsing.h
+/home/antlers/2019141480012/ysh/MyShell/parsing.h
 
-/home/antlers/2019141480012/ysh/MyShell/builtin_command.h
+/home/antlers/2019141480012/ysh/MyShell/parsing.h
 

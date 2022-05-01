@@ -4,6 +4,9 @@
 MyShell/CMakeFiles/MyShell.dir/builtin_command.c.o: ../MyShell/builtin_command.c
 MyShell/CMakeFiles/MyShell.dir/builtin_command.c.o: ../MyShell/builtin_command.h
 
+MyShell/CMakeFiles/MyShell.dir/parsing.c.o: ../MyShell/parsing.c
+MyShell/CMakeFiles/MyShell.dir/parsing.c.o: ../MyShell/parsing.h
+
 MyShell/CMakeFiles/MyShell.dir/read_command.c.o: ../MyShell/read_command.c
 MyShell/CMakeFiles/MyShell.dir/read_command.c.o: ../MyShell/read_command.h
 

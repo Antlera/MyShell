@@ -4,6 +4,9 @@
 MyShell/CMakeFiles/MyShell.dir/builtin_command.c.o
  /home/antlers/2019141480012/ysh/MyShell/builtin_command.c
  /home/antlers/2019141480012/ysh/MyShell/builtin_command.h
+MyShell/CMakeFiles/MyShell.dir/parsing.c.o
+ /home/antlers/2019141480012/ysh/MyShell/parsing.c
+ /home/antlers/2019141480012/ysh/MyShell/parsing.h
 MyShell/CMakeFiles/MyShell.dir/read_command.c.o
  /home/antlers/2019141480012/ysh/MyShell/read_command.c
  /home/antlers/2019141480012/ysh/MyShell/read_command.h

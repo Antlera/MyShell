@@ -152,6 +152,33 @@ builtin_command.c.s:
 	cd /home/antlers/2019141480012/ysh/build && $(MAKE) -f MyShell/CMakeFiles/MyShell.dir/build.make MyShell/CMakeFiles/MyShell.dir/builtin_command.c.s
 .PHONY : builtin_command.c.s
 
+parsing.o: parsing.c.o
+
+.PHONY : parsing.o
+
+# target to build an object file
+parsing.c.o:
+	cd /home/antlers/2019141480012/ysh/build && $(MAKE) -f MyShell/CMakeFiles/MyShell.dir/build.make MyShell/CMakeFiles/MyShell.dir/parsing.c.o
+.PHONY : parsing.c.o
+
+parsing.i: parsing.c.i
+
+.PHONY : parsing.i
+
+# target to preprocess a source file
+parsing.c.i:
+	cd /home/antlers/2019141480012/ysh/build && $(MAKE) -f MyShell/CMakeFiles/MyShell.dir/build.make MyShell/CMakeFiles/MyShell.dir/parsing.c.i
+.PHONY : parsing.c.i
+
+parsing.s: parsing.c.s
+
+.PHONY : parsing.s
+
+# target to generate assembly for a file
+parsing.c.s:
+	cd /home/antlers/2019141480012/ysh/build && $(MAKE) -f MyShell/CMakeFiles/MyShell.dir/build.make MyShell/CMakeFiles/MyShell.dir/parsing.c.s
+.PHONY : parsing.c.s
+
 read_command.o: read_command.c.o
 
 .PHONY : read_command.o
@@ -218,6 +245,9 @@ help:
 	@echo "... builtin_command.o"
 	@echo "... builtin_command.i"
 	@echo "... builtin_command.s"
+	@echo "... parsing.o"
+	@echo "... parsing.i"
+	@echo "... parsing.s"
 	@echo "... read_command.o"
 	@echo "... read_command.i"
 	@echo "... read_command.s"

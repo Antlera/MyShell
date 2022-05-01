@@ -5,18 +5,18 @@
 > Description:   
  ************************************************************************/
 #include<stdio.h>
+#include<stdlib.h>
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "read_command.h"
 int read_command(char **command,char **parameters,char *prompt,char *buffer){
-    // free(buffer);
     buffer = readline(prompt);
     if(feof(stdin))
     {
         printf("\n");
         exit(0);
     }
-
+    add_history(buffer);
     if(buffer[0] == '\0')
         return -1;
     char *pStart,*pEnd;
@@ -25,7 +25,7 @@ int read_command(char **command,char **parameters,char *prompt,char *buffer){
     pStart = pEnd = buffer;
     while(!isFinished){
         //过滤前面多余的空格和tab
-        while((*pEnd == ' ' && *pStart == ' ')||(*pEnd == '\t'&&pEnd == '\t')){
+        while((*pEnd == ' ' && *pStart == ' ')||(*pEnd== '\t'&&*pStart== '\t')){
             pStart++;
             pEnd++;
         }
@@ -36,6 +36,7 @@ int read_command(char **command,char **parameters,char *prompt,char *buffer){
             }
             break;
         }
+        // 将pEnd调整至第一个分隔符处
         while(*pEnd != ' ' && *pEnd != '\0' && *pEnd != '\n')
             pEnd++;
         if (count == 0)

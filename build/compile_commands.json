@@ -18,5 +18,10 @@
   "directory": "/home/antlers/2019141480012/ysh/build/MyShell",
   "command": "/bin/gcc   -g   -o CMakeFiles/MyShell.dir/builtin_command.c.o   -c /home/antlers/2019141480012/ysh/MyShell/builtin_command.c",
   "file": "/home/antlers/2019141480012/ysh/MyShell/builtin_command.c"
+},
+{
+  "directory": "/home/antlers/2019141480012/ysh/build/MyShell",
+  "command": "/bin/gcc   -g   -o CMakeFiles/MyShell.dir/parsing.c.o   -c /home/antlers/2019141480012/ysh/MyShell/parsing.c",
+  "file": "/home/antlers/2019141480012/ysh/MyShell/parsing.c"
 }
 ]

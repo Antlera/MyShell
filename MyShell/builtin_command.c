@@ -10,7 +10,9 @@
 #include<string.h>
 #include<unistd.h>
 #include<pwd.h>
+#include<readline/history.h>
 #include"builtin_command.h"
+
 int builtin_command(char *command, char **parameters)
 {
     if(strcmp(command,"exit")==0||strcmp(command,"quit")==0)
@@ -32,19 +34,23 @@ int builtin_command(char *command, char **parameters)
         strcpy(last_cd_path,pwd->pw_dir);
         if(parameters[1]==NULL)
         {
+            // 仅有cd指令的情况下则转到用户主目录
             strcpy(cd_path,pwd->pw_dir);
         }
         else if(parameters[1][0]=='~')
         {
+            // 以"~"开头将"~"补全为用户主目录
             strcpy(cd_path,pwd->pw_dir);
             strcpy(cd_path+strlen(pwd->pw_dir),parameters[1]+1);
         }
         else if(parameters[1][0]=='-')
         {
+            // 返回上一次目录的功能
             strcpy(cd_path,last_cd_path);
         }
         else
         {
+            //普通的cd命令，即cd path
             strcpy(cd_path,parameters[1]);
         }
         if(chdir(cd_path)!=0)
@@ -55,6 +61,27 @@ int builtin_command(char *command, char **parameters)
         }
         return 1;
     }
+    else if(strcmp(command,"history")==0)
+    {
+        
+        extern HISTORY_STATE *histState;
+        extern HIST_ENTRY **histList;
+        /* 获取history list的状态（offset，length，size) */
+        histState = history_get_history_state();
+        /* 获取历史列表 */
+        histList = history_list();
+        if(parameters[1]==NULL)
+        {
+            for(int i = 0;i <histState->length;i++)
+            {
+                printf("%d %8s\n",i+1,histList[i]->line);
+                /* free(histList[i]); */
+            }
+        }
+        return 1;
+
+    }
+    
     return 0;
 }
 /* int main() */

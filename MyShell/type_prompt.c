@@ -16,7 +16,7 @@ void type_prompt(char *prompt){
     char pathname[MAX_PATH_LEN];
     int length;
     pwd = getpwuid(getuid());
-    getcwd(pathname,MAX_PATH_LEN);
+    getcwd(pathname,MAX_PATH_LEN);//获取现在的工作目录并存储于pathname
     if(gethostname(hostname,MAX_NAME_LEN)==0)
         sprintf(prompt,"[Ysh]%s@%s:",pwd->pw_name,hostname);
     else
